@@ -44,6 +44,9 @@ input * {
 # Polkit
 exec /usr/bin/lxpolkit
 
+# Network manager applet
+exec nm-applet
+
 ### Key bindings
 #
 # Basics:
@@ -159,18 +162,19 @@ exec /usr/bin/lxpolkit
     bindsym $mod+minus scratchpad show
 
     exec --no-startup-id kitty --app-id=0notes nvim ~/code/codenotes/
-    for_window [app_id="0notes"] move scratchpad
+    for_window [app_id="0notes"] move scratchpad, resize set 860 620, move position center
     bindsym $mod+n [app_id="0notes"] scratchpad show
 
     exec --no-startup-id kitty --app-id=1todo nvim ~/code/codenotes/todo/TODO.md
-    for_window [app_id="1todo"] move scratchpad
+    for_window [app_id="1todo"] move scratchpad, resize set 860 620, move position center
     bindsym $mod+t [app_id="1todo"] scratchpad show
 
     exec --no-startup-id kitty --app-id=2run
-    for_window [app_id="2run"] move scratchpad
+    for_window [app_id="2run"] move scratchpad, resize set 860 620, move position center
     bindsym $mod+m [app_id="2run"] scratchpad show
 
-    bindsym $mod+p [app_id="zathu*"] scratchpad show
+    bindsym $mod+p [app_id="zathu*"] scratchpad show, resize set 860 740, move position center
+
 #
 # Resizing containers:
 #
