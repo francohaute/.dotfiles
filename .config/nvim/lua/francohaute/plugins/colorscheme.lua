@@ -1,10 +1,7 @@
 return {
-	"navarasu/onedark.nvim",
+	"mellow-theme/mellow.nvim",
 	priority = 1000,
 	config = function()
-		require("onedark").setup({
-			style = "darker",
-		})
-		require("onedark").load()
+		vim.cmd("colorscheme mellow")
 	end,
 }
