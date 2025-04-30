@@ -24,8 +24,8 @@ set $menu wmenu-run
 # Example configuration:
 #
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 900 'swaylock -f -c 000000' \
+         timeout 1000 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
@@ -41,8 +41,9 @@ input * {
     xkb_model "pc104"
 }
 
+
 # Polkit
-exec /usr/bin/lxpolkit
+exec usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Network manager applet
 exec nm-applet
@@ -161,17 +162,17 @@ exec nm-applet
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
 
-    exec --no-startup-id kitty --app-id=0notes nvim ~/code/codenotes/
-    for_window [app_id="0notes"] move scratchpad, resize set 860 620, move position center
-    bindsym $mod+n [app_id="0notes"] scratchpad show
+    exec --no-startup-id kitty --app-id=0notes nvim ~/codenotes/
+    for_window [app_id="0notes"] move scratchpad
+    bindsym $mod+n [app_id="0notes"] scratchpad show, resize set 860 620, move position center
 
-    exec --no-startup-id kitty --app-id=1todo nvim ~/code/codenotes/todo/TODO.md
-    for_window [app_id="1todo"] move scratchpad, resize set 860 620, move position center
-    bindsym $mod+t [app_id="1todo"] scratchpad show
+    exec --no-startup-id kitty --app-id=1todo nvim ~/codenotes/todo/TODO.md
+    for_window [app_id="1todo"] move scratchpad
+    bindsym $mod+t [app_id="1todo"] scratchpad show, resize set 860 620, move position center
 
     exec --no-startup-id kitty --app-id=2run
-    for_window [app_id="2run"] move scratchpad, resize set 860 620, move position center
-    bindsym $mod+m [app_id="2run"] scratchpad show
+    for_window [app_id="2run"] move scratchpad
+    bindsym $mod+m [app_id="2run"] scratchpad show, resize set 860 620, move position center
 
     bindsym $mod+p [app_id="zathu*"] scratchpad show, resize set 860 740, move position center
 
@@ -222,19 +223,24 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command i3status 
+    status_command i3status
 
     colors {
         statusline #ffffff
         background #000000
-        inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
 
 ## Appearance
+
+## Colours
+set $base00 #ffffff
+set $base06 #fbf1c7
+
+client.focused   $base00  $base00  $base06  $base00  $base00
+
 gaps inner 5px
 focus_follows_mouse no
 default_border pixel 3
-
 
 include /etc/sway/config.d/*

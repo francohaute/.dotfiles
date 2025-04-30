@@ -22,7 +22,7 @@ Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
 Plug 'tpope/vim-commentary'
 
-mapleader = " "
+let mapleader = " "
 
 imap fj <ESC>
 vmap fj <ESC>
