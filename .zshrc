@@ -13,7 +13,7 @@ compinit
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 
-source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/shell/key-bindings.zsh
 export FZF_DEFAULT_COMMAND="fd --hidden --type f --no-ignore"
 export FZF_DEFAULT_OPTS="--height=70% --layout=reverse --preview 'bat --color always --theme Coldark-Dark {}'"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -22,6 +22,7 @@ export FZF_ALT_C_COMMAND="fd --hidden --type d"
 export FZF_ALT_C_OPTS="--height=70% --layout=reverse --preview 'eza -T {}'"
 
 eval "$(starship init zsh)"
+
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
