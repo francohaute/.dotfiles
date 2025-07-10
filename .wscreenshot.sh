@@ -4,7 +4,7 @@ timestamp=$(date +"%Y%m%d%H%M%S")
 
 filename="$timestamp.png"
 
-slurp | grim -g - ~/codenotes/img/$filename
+spectacle -r -b -n -o ~/codenotes/img/$filename
 
 echo -n $filename | wl-copy
 
