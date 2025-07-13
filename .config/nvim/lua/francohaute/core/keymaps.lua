@@ -15,8 +15,7 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
 
-keymap.set("n", "<leader>op", ":silent !google-chrome-stable %<CR>")
-keymap.set("n", "<leader>as", ":silent !ghostwriter %<CR>")
+keymap.set("n", "<leader>op", ":silent !brave-browser %<CR>")
 
 keymap.set("n", "J", ":bp<CR>")
 keymap.set("n", "K", ":bn<CR>")

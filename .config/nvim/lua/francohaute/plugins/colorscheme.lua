@@ -1,7 +1,7 @@
 return {
-	"webhooked/kanso.nvim",
+	"kepano/flexoki-neovim",
 	priority = 1000,
 	config = function()
-		vim.cmd("colorscheme kanso")
+		vim.cmd("colorscheme flexoki")
 	end,
 }
